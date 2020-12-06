@@ -22,7 +22,7 @@ const day6part1 = (input) =>
   input
     .map((x) => {
       let hash = {};
-      x.reduce((a, c) => c.split("").forEach((z) => (a[z] ? (a[z] += 1) : (a[z] = 1)))), {};
+      x.map((y) => y.split("").forEach((z) => (hash[z] ? (hash[z] += 1) : (hash[z] = 1))));
       return Object.keys(hash).length;
     })
     .reduce(sum, 0);
@@ -35,3 +35,7 @@ const day6part2 = (input) =>
       return Object.values(hash).filter((y) => y === x.length).length;
     })
     .reduce(sum, 0);
+// console.log(day6part1(cleanInput(smallInput)));
+// console.log(day6part2(cleanInput(smallInput)));
+
+);
